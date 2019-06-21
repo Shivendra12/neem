@@ -13,7 +13,7 @@ app.use(validator());
 const mongoose = require('mongoose');
 
 mongoose.set('useCreateIndex', true)
-mongoose.connect('18.221.32.147://127.0.0.1:27017/Neem', { useNewUrlParser: true }).then(
+mongoose.connect('mongodb://127.0.0.1:27017/Neem', { useNewUrlParser: true }).then(
   (res) => {
   console.log("Connected to Database Successfully...");
   }

@@ -6,7 +6,7 @@ var signupemail = require('../api/controller/signupemail');
 /* GET Api page. */
 router.post('/register',sign.register);
 router.post('/verifyOtpMobile',sign.verifyOtpMobile);
-router.post('/login',sign.login);
+router.post('/login',signupemail.login);
 router.post('/signupemail',signupemail.signupemail)
 router.post('/verifyEmail',signupemail.verifyEmail);
 module.exports = router;

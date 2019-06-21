@@ -150,10 +150,10 @@ var login = ((req,res)=>{
         //     notEmpty : true,
         //     errorMessage : 'Please Fiil The E-mail Address'
         // },
-        'mobile': {
-            notEmpty : true,
-            errorMessage : 'Please Fill The Mobile Number'
-        }, 
+        // 'mobile': {
+        //     notEmpty : true,
+        //     errorMessage : 'Please Fill The Mobile Number'
+        // }, 
         'password' : {
             notEmpty : true, 
             isLength : {
@@ -202,5 +202,5 @@ var login = ((req,res)=>{
 
 module.exports = {register
     ,verifyOtpMobile,
-    login
+    // login
 };

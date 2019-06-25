@@ -2,6 +2,8 @@ var user = require("../../model/userModel");
 var SendOtp = require('sendotp');
 const sendOtp = new SendOtp('277721ALds15TD095ce418d7');
 var bcrypt = require('bcryptjs');
+var jwt = require('jsonwebtoken');
+var JWTSECRET = 'shivendra123';
 
 
 var register = ((req,res)=>{
@@ -75,6 +77,8 @@ var register = ((req,res)=>{
                 sendOtp.send("8357968250","NEEMAP", function(err, data){
                     console.log(',,,,,,,,,,,,,,,,,,,,,,,',err);
                     console.log('=======================',data);
+                    var token = jwt.sign({id: users._id},JWTSECRET);
+                    res.cookie('jwtToken',[token,true]);
                  return res.json({code:100,status : true, message : "User SuccessFully saved, Please verify Your Mobile no.",
                     data : {firstName : user.firstName,
                     lastName : user.lastName,
